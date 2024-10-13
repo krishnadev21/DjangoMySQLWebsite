@@ -1,0 +1,41 @@
+<html>
+  <head>
+    {% load static %}
+    <!-- Include CSS -->
+    <link rel="stylesheet" href="{% static 'css/users_info.css'%}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Info</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    
+  </head>
+  <body>
+
+    <table>
+      <caption>Users Information</caption>
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Password</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <td colspan="3">Data is updated every new user added.</td>
+        </tr>
+      </tfoot>
+      <tbody>
+       {% for Name, Email, Password in Users %}
+        <tr>
+            <th scope="row">{{Name}}</th>
+            <td>{{Email}}</td>
+            <td>{{Password}}</td>
+        </tr>
+       {% endfor %}
+      </tbody>
+    </table>
+    
+  </body>
+</html>
